@@ -1,0 +1,94 @@
+html {
+  scroll-behavior:smooth;
+}
+
+/* Fade-in for sections */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Hero background decorative animation */
+.hero-bg {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(96,165,250,0.2) 0%, transparent 70%);
+  transform: translateX(-50%) scale(0.8);
+  filter: blur(80px);
+  animation: pulseBG 8s infinite ease-in-out;
+  z-0;
+}
+@keyframes pulseBG {
+  0%   { transform: translateX(-50%) scale(0.8); opacity: 0.6; }
+  50%  { transform: translateX(-50%) scale(1.2); opacity: 0.2; }
+  100% { transform: translateX(-50%) scale(0.8); opacity: 0.6; }
+}
+
+/* Dark mode styles */
+html.dark body {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+html.dark header {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+html.dark footer {
+  background-color: #1e3a8a;
+}
+html.dark section.bg-gray-50 {
+  background-color: #0f172a;
+}
+html.dark section.bg-gray-100 {
+  background-color: #1e293b;
+}
+html.dark a {
+  color: white;
+}
+html.dark a:hover {
+  color: #0773f6;
+}
+html.dark #darktoggle {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+/* Mobile menu overlay background under dark mode */
+html.dark #mobileMenu {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+/* Container of each project card to ensure overflow is hidden so zoom doesn’t spill out */
+.project-card {
+  overflow: hidden;
+  /* ensure smooth transitions */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* The image inside the card */
+.project-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+/* Hover state — zoom in slightly, add a subtle shadow lift */
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Hover image inside card zooms more */
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+
